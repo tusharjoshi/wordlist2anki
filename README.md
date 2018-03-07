@@ -21,19 +21,19 @@ Update the `src/wordlist.txt` file with the words needed
 
 ## Running the script
 
-On console
+Show results on console
 
 ```bash
 node src/index.js
 ```
 
-As a text file
+Generate a text file
 
 ```bash
 node src/make-file.js
 ```
 
-As APKG file for Anki
+Generate an APKG file for Anki import
 
 ```bash
 node src/make-anki.js
