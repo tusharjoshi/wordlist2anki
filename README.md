@@ -4,6 +4,9 @@ Reads a text file with list of words, fetches their meaning from the Oxford Dict
 
 ## Prerequisites
 
+* node
+* npm
+
 You will need two environmental variables defined before running this script
 
 `~/.bash_profile`
@@ -14,6 +17,12 @@ export OXFORD_DICTIONARIES_APP_KEY=app_key
 ```
 
 These keys are obtained from a developer account at [Oxford Dictionaries API](https://developer.oxforddictionaries.com/)
+
+Download the dependencies for node
+
+```bash
+npm install
+```
 
 ## Populate words
 
