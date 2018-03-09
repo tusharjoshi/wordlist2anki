@@ -3,7 +3,7 @@ const createWordEntry = require('./data-formatter');
 const fs = require('fs');
 
 var client = new Client();	
-var delayMilis = 1000;
+var delayMilis = 2000;
 var delayIndex = 0;
 
 async function fetchAsyncMeaning(word) {
