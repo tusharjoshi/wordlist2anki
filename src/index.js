@@ -8,5 +8,6 @@ fetchAndDisplay(delim, wordfile).then((dataarray)=>{
         var data = dataarray[index]; 
         console.log('Word ' + (index + 1) + ': ' + data.word);
         console.log(data.text);
+        console.log(delim);
     }
 });
