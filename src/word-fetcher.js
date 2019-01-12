@@ -3,13 +3,14 @@ const createWordEntry = require('./data-formatter');
 const fs = require('fs');
 
 var client = new Client();	
-var delayMilis = 2000;
+var delayMilis = 6 * 1000;
 var delayIndex = 0;
 
 async function fetchAsyncMeaning(word) {
+    var encodedWord = encodeURIComponent(word);
     var args = { 
         path: {
-            "word": word
+            "word": encodedWord
         },
         headers: { 
             "Accept": "application/json",
@@ -17,15 +18,17 @@ async function fetchAsyncMeaning(word) {
             "app_key": process.env.OXFORD_DICTIONARIES_APP_KEY
         } 
     };
-    var url = 'https://od-api.oxforddictionaries.com/api/v1/entries/en/${word}';
+    var url = 'https://od-api.oxforddictionaries.com/api/v1/entries/en/${encodedWord}';
   
     delayIndex += 1;
     // Return new promise
     return new Promise(function(resolve, reject) {
       // Do async job
       setTimeout(()=>{
+          console.log('Calling API for word: '+ word);
         client.get(url, args,
             function (data, response) {
+              console.log('Received data for word:' + word);
                 resolve(data);
             });
       }, delayMilis * delayIndex);
